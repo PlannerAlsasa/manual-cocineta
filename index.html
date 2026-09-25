@@ -8,6 +8,7 @@
   <meta name="description" content="Manual del usuario de Cocineta Turbo ALSASA. Modelos QUEMJETCA y QUEMALUMCA.">
   <style>
     :root{
+      --topbar-h:86px;
       --alsasa-red:#e30613;
       --alsasa-red-dark:#b9000d;
       --bg:#f4f4f4;
@@ -74,7 +75,7 @@
     .quick{
       background:#fff;
       border-bottom:1px solid var(--line);
-      position:sticky; top:86px; z-index:20;
+      position:sticky; top:var(--topbar-h); z-index:20;
       box-shadow:0 4px 16px rgba(0,0,0,.07);
     }
     .quick-inner{
@@ -166,7 +167,6 @@
       .topbar-inner{min-height:74px;padding:8px 0}
       .brand-logo{width:min(150px,48vw)}
       .hero{padding:20px 0 18px}
-      .quick{top:74px}
       h1{font-size:26px}
       section{border-radius:12px}
     }
@@ -512,5 +512,24 @@
 <footer>
   Manual del Usuario - Cocineta Turbo ALSASA · Modelos QUEMJETCA / QUEMALUMCA
 </footer>
+
+<script>
+  // Mantiene la navegacion exactamente debajo del encabezado fijo,
+  // incluso si cambia el alto del logo en movil o escritorio.
+  (function () {
+    const topbar = document.querySelector('.topbar');
+    if (!topbar) return;
+
+    const syncTopbarHeight = () => {
+      document.documentElement.style.setProperty('--topbar-h', `${topbar.offsetHeight}px`);
+    };
+
+    syncTopbarHeight();
+    window.addEventListener('resize', syncTopbarHeight);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(syncTopbarHeight).observe(topbar);
+    }
+  })();
+</script>
 </body>
 </html>

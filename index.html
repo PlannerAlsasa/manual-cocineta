@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#e30613">
   <title>Manual del Usuario - Cocineta Turbo ALSASA</title>
   <meta name="description" content="Manual del usuario de Cocineta Turbo ALSASA. Modelos QUEMJETCA y QUEMALUMCA.">
   <style>
     :root{
-      --bg:#f5f5f3;
+      --alsasa-red:#e30613;
+      --alsasa-red-dark:#b9000d;
+      --bg:#f4f4f4;
       --card:#ffffff;
-      --ink:#161616;
-      --muted:#5f6368;
-      --line:#dedede;
-      --danger:#b00020;
-      --warn:#a45a00;
-      --accent:#111111;
-      --soft:#f0f0ee;
+      --ink:#171717;
+      --muted:#666666;
+      --line:#e2e2e2;
+      --danger:#e30613;
+      --warn:#222222;
+      --accent:#e30613;
+      --soft:#fff2f3;
       --max:980px;
     }
     *{box-sizing:border-box}
@@ -31,27 +33,29 @@
     a{color:inherit}
     .wrap{width:min(calc(100% - 28px), var(--max)); margin:auto}
     header{
-      background:#111;
+      background:linear-gradient(135deg,var(--alsasa-red),var(--alsasa-red-dark));
       color:#fff;
-      padding:34px 0 28px;
-      border-bottom:6px solid #000;
+      padding:30px 0 30px;
+      border-bottom:6px solid #111;
     }
-    .brand{
-      font-size:clamp(34px,7vw,64px);
-      font-weight:800;
-      letter-spacing:-2px;
-      text-transform:lowercase;
-      line-height:1;
+    .brand-logo{
+      display:block;
+      width:min(222px,62vw);
+      height:auto;
+      background:#fff;
+      border-radius:18px;
+      padding:2px;
+      box-shadow:0 8px 22px rgba(0,0,0,.16);
     }
-    .tagline{font-size:18px; margin-top:4px; opacity:.9}
     h1{font-size:clamp(30px,5vw,52px); line-height:1.05; margin:24px 0 8px}
     .subtitle{font-size:18px; max-width:760px; color:#e8e8e8}
     .models{
       display:flex; gap:10px; flex-wrap:wrap; margin-top:18px
     }
     .pill{
-      display:inline-block; border:1px solid #fff; border-radius:999px;
-      padding:7px 12px; font-weight:700; font-size:14px
+      display:inline-block; border:2px solid #fff; border-radius:999px;
+      padding:7px 12px; font-weight:700; font-size:14px;
+      background:rgba(255,255,255,.12)
     }
     .quick{
       background:#fff;
@@ -64,9 +68,11 @@
       scrollbar-width:thin;
     }
     .quick a{
-      white-space:nowrap; text-decoration:none; border:1px solid var(--line);
-      border-radius:999px; padding:8px 12px; background:#fff; font-size:14px
+      white-space:nowrap; text-decoration:none; border:1px solid #f0b8bd;
+      border-radius:999px; padding:8px 12px; background:#fff; font-size:14px;
+      color:var(--alsasa-red); font-weight:700
     }
+    .quick a:hover{background:var(--alsasa-red);color:#fff;border-color:var(--alsasa-red)}
     main{padding:26px 0 50px}
     section{
       background:var(--card);
@@ -77,8 +83,8 @@
       box-shadow:0 8px 24px rgba(0,0,0,.04);
       scroll-margin-top:82px;
     }
-    h2{font-size:clamp(24px,4vw,34px); line-height:1.15; margin:0 0 18px}
-    h3{font-size:21px; margin:22px 0 10px}
+    h2{font-size:clamp(24px,4vw,34px); line-height:1.15; margin:0 0 18px; color:var(--alsasa-red); border-bottom:3px solid var(--alsasa-red); padding-bottom:8px}
+    h3{font-size:21px; margin:22px 0 10px; color:#111}
     p{margin:10px 0}
     ul,ol{padding-left:24px}
     li{margin:7px 0}
@@ -90,8 +96,8 @@
       margin:14px 0;
     }
     .warn{
-      border-left-color:var(--warn);
-      background:#fff7ea;
+      border-left-color:#111;
+      background:#f4f4f4;
     }
     .note{
       border-left:6px solid #444;
@@ -111,15 +117,41 @@
     .btn{
       display:inline-block; text-decoration:none; background:#111; color:#fff;
       border-radius:10px; padding:12px 16px; font-weight:700;
+      border:2px solid #111;
     }
-    .btn.secondary{background:#fff;color:#111;border:1px solid #111}
+    .btn:hover{background:#fff;color:var(--alsasa-red);border-color:#fff}
+    .manual-figure{
+      margin:22px 0 8px;
+      padding:10px;
+      background:#f7f7f7;
+      border:1px solid var(--line);
+      border-radius:14px;
+      text-align:center;
+    }
+    .manual-figure img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:860px;
+      object-fit:contain;
+      margin:auto;
+      border-radius:8px;
+      background:#fff;
+    }
+    .manual-figure figcaption{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;
+    }
     .contact{
       text-align:center;
-      background:#111; color:#fff; border-color:#111;
+      background:linear-gradient(135deg,var(--alsasa-red),var(--alsasa-red-dark)); color:#fff; border-color:var(--alsasa-red);
     }
+    .contact h2{color:#fff;border-bottom-color:#fff}
     .contact a{color:#fff}
     footer{
-      text-align:center; color:var(--muted); padding:0 14px 36px; font-size:13px
+      text-align:center; color:#fff; padding:22px 14px; font-size:13px;
+      background:#111; border-top:5px solid var(--alsasa-red)
     }
     .top{
       display:inline-block; margin-top:14px; font-weight:700; text-decoration:none
@@ -142,8 +174,7 @@
 <body id="inicio">
 <header>
   <div class="wrap">
-    <div class="brand">alsasa</div>
-    <div class="tagline">el placer en tu hogar</div>
+    <img class="brand-logo" src="img/logo-alsasa.png" alt="ALSASA - el placer en tu hogar">
     <h1>COCINETA TURBO<br>MANUAL DEL USUARIO</h1>
     <p class="subtitle">Alertas de seguridad, instrucciones de ensamblaje y operación, mantenimiento general y almacenaje.</p>
     <div class="models">
@@ -152,7 +183,6 @@
     </div>
     <div class="hero-actions">
       <a class="btn" href="#seguridad">Leer manual</a>
-      <a class="btn secondary" href="manual.pdf" target="_blank" rel="noopener">Abrir PDF original</a>
     </div>
   </div>
 </header>
@@ -173,6 +203,10 @@
 <main class="wrap">
 
 <section>
+  <figure class="manual-figure">
+    <img src="img/portada.png" alt="Portada del Manual del Usuario Cocineta Turbo ALSASA" loading="eager">
+    <figcaption>Portada del manual original.</figcaption>
+  </figure>
   <div class="alert">
     <strong>GUARDE ESTE MANUAL PARA REFERENCIA FUTURA.</strong><br>
     NO PARA USO COMERCIAL.
@@ -272,6 +306,11 @@
 
   <div class="note"><strong>NOTA:</strong> Siempre debe haber un mínimo de 8 cm / 3 pulgadas entre el nivel del agua y la parte superior del recipiente.</div>
 
+  <figure class="manual-figure">
+    <img src="img/operacion-seguridad.png" alt="Pictogramas y recomendaciones de operación segura de la Cocineta Turbo" loading="lazy">
+    <figcaption>Ilustraciones de operación y seguridad del manual.</figcaption>
+  </figure>
+
   <ul>
     <li>Este aparato estará caliente durante y después de su uso; siempre use ropa protectora al operar el aparato.</li>
     <li>Use manoplas o guantes aislantes para protegerse de las superficies calientes o salpicaduras de líquidos de cocción.</li>
@@ -315,6 +354,11 @@
     </ul>
   </div>
 
+  <figure class="manual-figure">
+    <img src="img/ensamblaje-regulador.png" alt="Ensamblaje, regulador y manguera de la Cocineta Turbo ALSASA" loading="lazy">
+    <figcaption>Ensamblaje y componentes del sistema de gas.</figcaption>
+  </figure>
+
   <h3>Regulador y manguera</h3>
   <p>El regulador de válvula de manguera está diseñado para conectar el aparato a un cilindro de gas LP de 9.1 kg (20 libras). Lea y siga todas las instrucciones y advertencias en las etiquetas de seguridad de la manguera de suministro.</p>
   <p>Si hay evidencia de abrasión, desgaste, cortes o fugas, el regulador debe ser reemplazado antes de poner en funcionamiento el aparato. Reemplace únicamente con el modelo suministrado por ALSASA.</p>
@@ -347,6 +391,11 @@
     <li>Cierre la válvula. Espere 5 minutos para que se evacuen los vapores de gas antes de encender el quemador.</li>
   </ol>
 
+  <figure class="manual-figure">
+    <img src="img/prueba-fugas.png" alt="Diagrama de puntos para realizar la prueba de fugas de gas" loading="lazy">
+    <figcaption>Diagrama de la prueba de fugas de gas.</figcaption>
+  </figure>
+
   <div class="alert">
     <strong>PELIGRO:</strong>
     <ul>
@@ -375,6 +424,11 @@
     <li>Coloque el cilindro de gas LP a una distancia mínima de 50,8 cm (20 pulgadas) del aparato.</li>
     <li>Mantenga el aparato a 3 m / 10 pies de estructuras y materiales combustibles.</li>
   </ul>
+
+  <figure class="manual-figure">
+    <img src="img/posicionamiento.png" alt="Diagrama de posicionamiento seguro de la Cocineta Turbo" loading="lazy">
+    <figcaption>Distancias y ubicación recomendada para el uso seguro.</figcaption>
+  </figure>
 
   <div class="warn alert">
     <strong>ADVERTENCIA</strong>
@@ -413,6 +467,11 @@
     <li>Si el encendido no se produce en 5 segundos, apague completamente la válvula del cilindro de gas LP y la válvula de latón, espere 5 minutos y repita el procedimiento de encendido.</li>
   </ol>
 
+  <figure class="manual-figure">
+    <img src="img/encendido.png" alt="Instrucciones e ilustración de encendido de la Cocineta Turbo" loading="lazy">
+    <figcaption>Ilustración del procedimiento de encendido.</figcaption>
+  </figure>
+
   <h3>Cómo volver a encender el aparato</h3>
   <p>Si el aparato se apaga accidentalmente, cierre completamente la válvula del cilindro de gas LP y la válvula de latón, espere 5 minutos para que el gas se evacue y repita los pasos 1 a 4 de las instrucciones de encendido.</p>
 </section>
@@ -432,7 +491,6 @@
   <p><strong>Aluminio de El Salvador S.A.</strong><br>
   Carretera a Sonsonate, Km 28 1/2, Lourdes, Colón, El Salvador.</p>
   <p><a href="https://www.alsasa.com/" target="_blank" rel="noopener">www.alsasa.com</a></p>
-  <p><a class="btn secondary" href="manual.pdf" target="_blank" rel="noopener">Abrir manual PDF</a></p>
 </section>
 
 <a class="top" href="#inicio">↑ Volver al inicio</a>
